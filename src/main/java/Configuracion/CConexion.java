@@ -24,18 +24,18 @@ public class CConexion {
 
     public Connection estableceConexion() {
         try {
-            // Conectar sin especificar la base de datos
+            
             String cadenaSinBD = "jdbc:mysql://" + ip + ":" + puerto + "/";
             Class.forName("com.mysql.cj.jdbc.Driver");
             conectar = DriverManager.getConnection(cadenaSinBD, usuario, contrasenia);
 
-            // Verificar si la base de datos existe y crearla si no
+
             Statement stmt = conectar.createStatement();
             stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + bd);
             stmt.close();
 
-            // Ahora conectar a la base de datos específica
-            conectar.close();  // Cerrar la conexión sin la base de datos
+            
+            conectar.close();  
             conectar = DriverManager.getConnection(cadena, usuario, contrasenia);
             //JOptionPane.showMessageDialog(null, "Conexion Correcta");
 
