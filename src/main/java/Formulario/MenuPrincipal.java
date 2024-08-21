@@ -32,6 +32,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuCliente = new javax.swing.JMenuItem();
         jMenuProducto = new javax.swing.JMenuItem();
@@ -96,6 +97,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem5);
+
+        jMenuItem1.setText("Presupesto");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
@@ -191,7 +200,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-       /* Formulario.ForVentas objetoFormularioVenta = new Formulario.ForVentas();
+        /* Formulario.ForVentas objetoFormularioVenta = new Formulario.ForVentas();
         PanelForemularios.add(objetoFormularioVenta);
         objetoFormularioVenta.setVisible(true);
          
@@ -202,7 +211,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuClienteMouseClicked
         Formulario.ForClientes objetoFormularioCliente = new Formulario.ForClientes();
-       DpFormulario.add(objetoFormularioCliente);
+        DpFormulario.add(objetoFormularioCliente);
         objetoFormularioCliente.setVisible(true);
     }//GEN-LAST:event_jMenuClienteMouseClicked
 
@@ -248,29 +257,36 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu4ActionPerformed
 
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-System.exit(0);        
+        System.exit(0);
 // TODO add your handling code here:
     }//GEN-LAST:event_jMenu4MouseClicked
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-         Formulario.ForVentas objetoFormularioVenta = new Formulario.ForVentas();
+        Formulario.ForVentas objetoFormularioVenta = new Formulario.ForVentas();
         DpFormulario.add(objetoFormularioVenta);
         objetoFormularioVenta.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem5MouseClicked
-       Formulario.ForVentas objetoFormularioVenta = new Formulario.ForVentas();
+        Formulario.ForVentas objetoFormularioVenta = new Formulario.ForVentas();
         DpFormulario.add(objetoFormularioVenta);
         objetoFormularioVenta.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5MouseClicked
 
     private void jMenuProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuProveedorActionPerformed
-          Formulario.ForProveedores objetoFormularioProveedor = new Formulario.ForProveedores();
-          DpFormulario.add(objetoFormularioProveedor);
+        Formulario.ForProveedores objetoFormularioProveedor = new Formulario.ForProveedores();
+        DpFormulario.add(objetoFormularioProveedor);
         objetoFormularioProveedor.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jMenuProveedorActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Formulario.ForPresupuesto objetoForPresupuesto = new Formulario.ForPresupuesto();
+        DpFormulario.add(objetoForPresupuesto);
+        objetoForPresupuesto.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,6 +332,7 @@ System.exit(0);
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuCliente;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
