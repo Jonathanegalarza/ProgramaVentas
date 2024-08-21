@@ -8,66 +8,24 @@ package Modelo;
  *
  * @author Ruben
  */
-public class modeloCliente {
-
-    int IdCliente;
+public class modeloProveedor {
+    
+    int IdProveedor;
     String Nombre;
-    String dni;
+    String Cuit;
     String telefono;
     String email;
     String direccion;
     String localidad;
     String UfechaModificacion;
     String Observaciones;
-    String PersAutorizadas;
-    int LimiteCompra;
 
-    public String getPersAutorizadas() {
-        return PersAutorizadas;
+    public int getIdProveedor() {
+        return IdProveedor;
     }
 
-    public void setPersAutorizadas(String PersAutorizadas) {
-        this.PersAutorizadas = PersAutorizadas;
-    }
-
-    public int getLimiteCompra() {
-        return LimiteCompra;
-    }
-
-    public void setLimiteCompra(int LimiteCompra) {
-        this.LimiteCompra = LimiteCompra;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getObservaciones() {
-        return Observaciones;
-    }
-
-    public void setObservaciones(String Observaciones) {
-        this.Observaciones = Observaciones;
-    }
-
-    public String getUfechaModificacion() {
-        return UfechaModificacion;
-    }
-
-    public void setUfechaModificacion(String UfechaModificacion) {
-        this.UfechaModificacion = UfechaModificacion;
-    }
-
-    public int getIdCliente() {
-        return IdCliente;
-    }
-
-    public void setIdCliente(int IdCliente) {
-        this.IdCliente = IdCliente;
+    public void setIdProveedor(int IdProveedor) {
+        this.IdProveedor = IdProveedor;
     }
 
     public String getNombre() {
@@ -76,6 +34,14 @@ public class modeloCliente {
 
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
+    }
+
+    public String getCuit() {
+        return Cuit;
+    }
+
+    public void setCuit(String Cuit) {
+        this.Cuit = Cuit;
     }
 
     public String getTelefono() {
@@ -110,4 +76,24 @@ public class modeloCliente {
         this.localidad = localidad;
     }
 
+    public String getUfechaModificacion() {
+        return UfechaModificacion;
+    }
+
+    public void setUfechaModificacion(String UfechaModificacion) {
+        this.UfechaModificacion = UfechaModificacion;
+    }
+
+    public String getObservaciones() {
+        return Observaciones;
+    }
+
+    public void setObservaciones(String Observaciones) {
+        this.Observaciones = Observaciones;
+    }
+
+
+
 }
+
+

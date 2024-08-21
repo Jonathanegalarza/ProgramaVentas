@@ -18,7 +18,7 @@ public class CConexion {
 
     String usuario = "root";
     String contrasenia = "root";
-    String bd = "facturar";
+    String bd = "rubenventas";
     String ip = "localhost";
     String puerto = "3307";
 
@@ -28,7 +28,7 @@ public class CConexion {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conectar = DriverManager.getConnection(cadena, usuario, contrasenia);
-            JOptionPane.showMessageDialog(null, "Conexion Correcta");
+            //JOptionPane.showMessageDialog(null, "Conexion Correcta");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Conexion Fallida" + e.toString());
 
@@ -42,7 +42,7 @@ public class CConexion {
         try {
             if (conectar != null && !conectar.isClosed()) {
                 conectar.close();
-                JOptionPane.showMessageDialog(null, "Fin de la Conexion");
+               // JOptionPane.showMessageDialog(null, "Fin de la Conexion");
 
             }
         } catch (Exception e) {
