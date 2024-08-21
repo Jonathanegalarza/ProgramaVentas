@@ -12,8 +12,8 @@ public class RubeFact {
 
     public static void main(String[] args) {
        
-        //Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
-        //objetoConexion.estableceConexion();
+        Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
+        objetoConexion.estableceConexion();
         Formulario.MenuPrincipal objetoMenuPrincipal = new Formulario.MenuPrincipal();
         objetoMenuPrincipal.setVisible(true);   
     }
