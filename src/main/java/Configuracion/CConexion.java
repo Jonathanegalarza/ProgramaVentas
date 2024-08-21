@@ -24,7 +24,7 @@ public class CConexion {
 
     public Connection estableceConexion() {
         try {
-            
+           
             String cadenaSinBD = "jdbc:mysql://" + ip + ":" + puerto + "/";
             Class.forName("com.mysql.cj.jdbc.Driver");
             conectar = DriverManager.getConnection(cadenaSinBD, usuario, contrasenia);
@@ -34,7 +34,8 @@ public class CConexion {
             stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + bd);
             stmt.close();
 
-            
+           
+      
             conectar.close();  
             conectar = DriverManager.getConnection(cadena, usuario, contrasenia);
             //JOptionPane.showMessageDialog(null, "Conexion Correcta");
