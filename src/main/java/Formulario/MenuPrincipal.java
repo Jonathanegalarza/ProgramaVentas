@@ -30,7 +30,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         DpFormulario = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jMenuVender = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -73,15 +73,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addComponent(DpFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Vender");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jMenuVender.setText("Vender");
+        jMenuVender.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
+                jMenuVenderMouseClicked(evt);
             }
         });
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuVender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
+                jMenuVenderActionPerformed(evt);
             }
         });
 
@@ -96,17 +96,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jMenuItem5ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem5);
+        jMenuVender.add(jMenuItem5);
 
         jMenuItem1.setText("Presupesto");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem1MouseClicked(evt);
+            }
+        });
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenuVender.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenuVender);
 
         jMenu2.setText("Administracion");
 
@@ -195,15 +200,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+    private void jMenuVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuVenderActionPerformed
 
-    }//GEN-LAST:event_jMenu1ActionPerformed
+    }//GEN-LAST:event_jMenuVenderActionPerformed
 
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        Formulario.ForPresupuesto objetoFormularioPresupuesto = new Formulario.ForPresupuesto();
-        DpFormulario.add(objetoFormularioPresupuesto);
-        objetoFormularioPresupuesto.setVisible(true);
-    }//GEN-LAST:event_jMenu1MouseClicked
+    private void jMenuVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuVenderMouseClicked
+       
+    }//GEN-LAST:event_jMenuVenderMouseClicked
 
     private void jMenuClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuClienteMouseClicked
         Formulario.ForClientes objetoFormularioCliente = new Formulario.ForClientes();
@@ -284,6 +287,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
+        Formulario.ForPresupuesto objetoFormularioPresupuesto = new Formulario.ForPresupuesto();
+        DpFormulario.add(objetoFormularioPresupuesto);
+        objetoFormularioPresupuesto.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -322,7 +331,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DpFormulario;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -334,6 +342,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuProducto;
     private javax.swing.JMenuItem jMenuProveedor;
+    private javax.swing.JMenu jMenuVender;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
