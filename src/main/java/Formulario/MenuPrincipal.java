@@ -200,13 +200,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        /* Formulario.ForVentas objetoFormularioVenta = new Formulario.ForVentas();
-        PanelForemularios.add(objetoFormularioVenta);
-        objetoFormularioVenta.setVisible(true);
-         
-    Al FORMULARIO VENTAS SE AGREGO UN PANEL , CON EL NOMBRE DE PANELFORMULARIO,
-        SE INTRODUJO EL OBJETOFORMULARIO Y SE LO HIZO VISIBLE
-         */        // TODO add your handling code here:
+        Formulario.ForPresupuesto objetoFormularioPresupuesto = new Formulario.ForPresupuesto();
+        DpFormulario.add(objetoFormularioPresupuesto);
+        objetoFormularioPresupuesto.setVisible(true);
     }//GEN-LAST:event_jMenu1MouseClicked
 
     private void jMenuClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuClienteMouseClicked

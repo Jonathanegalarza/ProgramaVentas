@@ -154,6 +154,12 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         tbProducto2 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
+        txtBusquedaProducto3 = new javax.swing.JTextField();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tbProducto3 = new javax.swing.JTable();
+        jButton6 = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder("Presupuesto"));
         setClosable(true);
@@ -1268,7 +1274,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtBusquedaProducto2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton5)
@@ -1287,14 +1293,77 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
                 .addGap(0, 22, Short.MAX_VALUE))
         );
 
+        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder("Clientes"));
+
+        jLabel44.setText("Busqueda");
+
+        txtBusquedaProducto3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtBusquedaProducto3MouseClicked(evt);
+            }
+        });
+        txtBusquedaProducto3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusquedaProducto3KeyTyped(evt);
+            }
+        });
+
+        tbProducto3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        tbProducto3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        tbProducto3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbProducto3MouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(tbProducto3);
+
+        jButton6.setText("Seleccionar");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtBusquedaProducto3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addContainerGap())
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(txtBusquedaProducto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addComponent(jButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 22, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 318, Short.MAX_VALUE)
@@ -1308,10 +1377,10 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 216, Short.MAX_VALUE)
@@ -1323,6 +1392,8 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
                     .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 216, Short.MAX_VALUE)))
         );
+
+        jPanel14.getAccessibleContext().setAccessibleName("\"Clientes\"");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1466,6 +1537,18 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tbProducto2MouseClicked
 
+    private void txtBusquedaProducto3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaProducto3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusquedaProducto3MouseClicked
+
+    private void txtBusquedaProducto3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaProducto3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusquedaProducto3KeyTyped
+
+    private void tbProducto3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbProducto3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbProducto3MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarProductos;
@@ -1483,6 +1566,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
@@ -1523,6 +1607,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1533,6 +1618,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1548,6 +1634,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JLabel lbliva;
     private javax.swing.JLabel lbliva1;
     private javax.swing.JLabel lbltotal;
@@ -1557,6 +1644,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     private javax.swing.JTable tbProducto;
     private javax.swing.JTable tbProducto1;
     private javax.swing.JTable tbProducto2;
+    private javax.swing.JTable tbProducto3;
     private javax.swing.JTable tbresumenventa;
     private javax.swing.JTable tbresumenventa1;
     private javax.swing.JTextField txtBusquedaCliente;
@@ -1564,6 +1652,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtBusquedaProducto;
     private javax.swing.JTextField txtBusquedaProducto1;
     private javax.swing.JTextField txtBusquedaProducto2;
+    private javax.swing.JTextField txtBusquedaProducto3;
     private javax.swing.JTextField txtCantidadVentas;
     private javax.swing.JTextField txtCantidadVentas1;
     private javax.swing.JTextField txtSDireccion;
