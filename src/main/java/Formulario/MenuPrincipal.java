@@ -4,6 +4,8 @@
  */
 package Formulario;
 
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author Ruben
@@ -15,6 +17,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+          // Crear un JScrollPane y agregar jDesktopPane1 dentro de él
+        JScrollPane scrollPane = new JScrollPane(jDesktopPane1);
+        
+        // Configurar el tamaño de jDesktopPane1 para que sea más grande que la ventana principal
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(1500, 1500));
+        
+        // Reemplazar el layout original con el JScrollPane
+        setContentPane(scrollPane);
+        
+        // Volver a empacar para ajustar el JScrollPane
+        pack();
     }
 
     /**
@@ -27,8 +40,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         DpFormulario = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuVender = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -344,5 +359,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuProveedor;
     private javax.swing.JMenu jMenuVender;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+
 }
