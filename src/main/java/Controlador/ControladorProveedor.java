@@ -5,6 +5,7 @@
 package Controlador;
 
 import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -144,4 +145,47 @@ public class ControladorProveedor {
         }
 
     }
+    public void BuscarProveedor(JTextField Nombre, JTable tablaProveedor) {
+        Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
+        Modelo.modeloProveedor objetoProveedor = new Modelo.modeloProveedor();
+
+        DefaultTableModel modelo = new DefaultTableModel();
+
+        modelo.addColumn("IdProveedor");
+        modelo.addColumn("Nombre");
+        
+
+        tablaProveedor.setModel(modelo);
+
+        try {
+            String consulta = "SELECT * FROM facturar.proveedor WHERE proveedor.Nombre like concat('%',? ,'%')";
+            PreparedStatement ps = objetoConexion.estableceConexion().prepareStatement(consulta);
+            ps.setString(1,Nombre.getText() );
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                objetoProveedor.setIdProveedor(rs.getInt("idProveedor"));
+                objetoProveedor.setNombre(rs.getString("Nombre"));
+                
+                modelo.addRow(new Object[]{
+                    objetoProveedor.getIdProveedor(),
+                    objetoProveedor.getNombre()});
+
+            }
+            tablaProveedor.setModel(modelo);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se puede cargar Lista" + e.toString());
+
+        } finally {
+            objetoConexion.cerrarConexion();
+        }
+        for (int column = 0; column < tablaProveedor.getColumnCount(); column++) {
+            Class<?> ColumClass = tablaProveedor.getColumnClass(column);
+            tablaProveedor.setDefaultEditor(ColumClass, null);
+
+        }
+    }
+
+
 }

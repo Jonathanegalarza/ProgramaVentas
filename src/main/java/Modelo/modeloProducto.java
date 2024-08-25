@@ -17,6 +17,24 @@ public class modeloProducto {
     Double Iva;
     int Stock;
     String UltimaModificacion;
+    String Clasificacion1;
+    String Clasificacion2;
+
+    public String getClasificacion1() {
+        return Clasificacion1;
+    }
+
+    public void setClasificacion1(String Clasificacion1) {
+        this.Clasificacion1 = Clasificacion1;
+    }
+
+    public String getClasificacion2() {
+        return Clasificacion2;
+    }
+
+    public void setClasificacion2(String Clasificacion2) {
+        this.Clasificacion2 = Clasificacion2;
+    }
 
     public String getUltimaModificacion() {
         return UltimaModificacion;
