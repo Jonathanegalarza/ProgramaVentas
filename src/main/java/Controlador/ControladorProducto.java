@@ -28,7 +28,7 @@ public class ControladorProducto {
 
         DefaultTableModel modelo = new DefaultTableModel();
 
-        String sql = "";
+        String sql = " ";
 
         modelo.addColumn("IdProducto");
         modelo.addColumn("Producto");
@@ -37,9 +37,13 @@ public class ControladorProducto {
         modelo.addColumn("PrecioProducto");
         modelo.addColumn("Stock");
         modelo.addColumn("UltimaModificacion");
+        modelo.addColumn("Clasificacion1");
+        modelo.addColumn("Clasificacion2");
 
         tablaTotalProducto.setModel(modelo);
-        sql = "SELECT producto.idProducto,producto.Producto,producto.Neto,producto.Iva,producto.PrecioProducto,producto.Stock,producto.UltimaModificacion from producto;";
+        sql = "SELECT producto.idProducto,producto.Producto,"
+                + "producto.Neto,producto.Iva,producto.PrecioProducto,producto.Stock,producto.UltimaModificacion,"
+                + "producto.Clasificacion1,producto.Clasificacion2 from producto;";
 
         try {
             Statement st = ObjetoConexion.estableceConexion().createStatement();
@@ -52,6 +56,8 @@ public class ControladorProducto {
                 objetoProducto.setPrecioProducto(rs.getDouble("PrecioProducto"));
                 objetoProducto.setStock(rs.getInt("Stock"));
                 objetoProducto.setUltimaModificacion(rs.getString("UltimaModificacion"));
+                objetoProducto.setClasificacion1(rs.getString("Clasificacion1"));
+                objetoProducto.setClasificacion2(rs.getString("Clasificacion2"));
 
                 modelo.addRow(new Object[]{
                     objetoProducto.getIdProducto(),
@@ -60,7 +66,9 @@ public class ControladorProducto {
                     objetoProducto.getIva(),
                     objetoProducto.getPrecioProducto(),
                     objetoProducto.getStock(),
-                    objetoProducto.getUltimaModificacion(),});
+                    objetoProducto.getUltimaModificacion(),
+                    objetoProducto.getClasificacion1(),
+                    objetoProducto.getClasificacion2()});
             }
             tablaTotalProducto.setModel(modelo);
         } catch (SQLException e) {
@@ -76,13 +84,15 @@ public class ControladorProducto {
             JTextField Iva,
             JTextField PrecioProducto,
             JTextField Stock,
-            JTextField UltimaModificacion
+            JTextField UltimaModificacion,
+            JTextField Clasificacion1,
+            JTextField Clasificacion2
     ) {
 
         Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
         Modelo.modeloProducto objeProducto = new Modelo.modeloProducto();
 
-        String consulta = "insert into Producto (Producto,Neto,Iva,PrecioProducto,Stock)value(?,?,?,?,?)";
+        String consulta = "insert into Producto (Producto,Neto,Iva,PrecioProducto,Stock,Clasificacion1,Clasificacion2)value(?,?,?,?,?,?,?)";
 
         try {
             objeProducto.setProducto(Producto.getText());
@@ -90,7 +100,8 @@ public class ControladorProducto {
             objeProducto.setIva(Double.valueOf(Iva.getText()));
             objeProducto.setPrecioProducto(Double.valueOf(PrecioProducto.getText()));
             objeProducto.setStock(Integer.parseInt(Stock.getText()));
-
+            objeProducto.setClasificacion1(Clasificacion1.getText());
+            objeProducto.setClasificacion2(Clasificacion2.getText());
             CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
 
             cs.setString(1, objeProducto.getProducto());
@@ -98,6 +109,8 @@ public class ControladorProducto {
             cs.setDouble(3, objeProducto.getIva());
             cs.setDouble(4, objeProducto.getPrecioProducto());
             cs.setInt(5, objeProducto.getStock());
+            cs.setString(6,objeProducto.getClasificacion1());
+            cs.setString(7,objeProducto.getClasificacion2());
 
             cs.execute();
 
@@ -119,7 +132,9 @@ public class ControladorProducto {
             JTextField Iva,
             JTextField PrecioProducto,
             JTextField Stock,
-            JTextField UltimaModificacion) {
+            JTextField UltimaModificacion,
+            JTextField Clasificacion1,
+            JTextField Clasificacion2) {
 
         int fila = tablaTotaltbProducto.getSelectedRow(); //guarda la fila seleccionada
 
@@ -132,6 +147,8 @@ public class ControladorProducto {
                 PrecioProducto.setText(tablaTotaltbProducto.getValueAt(fila, 4).toString());
                 Stock.setText(tablaTotaltbProducto.getValueAt(fila, 5).toString());
                 UltimaModificacion.setText(tablaTotaltbProducto.getValueAt(fila, 6).toString());
+                Clasificacion1.setText(tablaTotaltbProducto.getValueAt(fila,7).toString());
+                Clasificacion2.setText(tablaTotaltbProducto.getValueAt(fila,8).toString());
 
             }
         } catch (Exception e) {
@@ -146,19 +163,15 @@ public class ControladorProducto {
             JTextField Iva,
             JTextField PrecioProducto,
             JTextField Stock,
-            JTextField UltimaModificacion
+            JTextField UltimaModificacion,
+            JTextField Clasificacion1,
+            JTextField Clasificacion2
     ) {
 
         Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
         Modelo.modeloProducto objeProducto = new Modelo.modeloProducto();
 
-        String consulta = "UPDATE `facturar`.`producto` SET"
-                + " `Producto` = '?',"
-                + " `Neto` = '?',"
-                + " `Iva` = '?',"
-                + " `PrecioProducto` = '?',"
-                + " `Stock` = '?'"
-                + " WHERE (`idProducto` = '?'); ";
+        String consulta = "UPDATE `facturar`.`producto` SET `Producto` = '?', `Neto` = '?',`Iva` = '?',`PrecioProducto` = '?',Stock` = '?',`Clasificacion1` = '?',`Clasificacion2` = '?'WHERE (`idProducto` = '?'); ";
 
         try {
             objeProducto.setIdProducto(Integer.parseInt(id.getText()));
@@ -167,6 +180,8 @@ public class ControladorProducto {
             objeProducto.setIva(Double.valueOf(Iva.getText()));
             objeProducto.setPrecioProducto(Double.valueOf(PrecioProducto.getText()));
             objeProducto.setStock(Integer.parseInt(Stock.getText()));
+            objeProducto.setClasificacion1(Clasificacion1.getText());
+            objeProducto.setClasificacion1(Clasificacion1.getText());
 
             CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
 
@@ -174,9 +189,10 @@ public class ControladorProducto {
             cs.setDouble(2, objeProducto.getNeto());
             cs.setDouble(3, objeProducto.getIva());
             cs.setDouble(4, objeProducto.getPrecioProducto());
-            cs.setInt(5, objeProducto.getStock());
-            cs.setInt(6, objeProducto.getIdProducto());
-        
+            cs.setInt(7, objeProducto.getStock());
+            cs.setString(8,objeProducto.getClasificacion1());
+            cs.setString(9,objeProducto.getClasificacion2());
+            cs.setInt(10, objeProducto.getIdProducto());
 
             cs.execute();
             JOptionPane.showMessageDialog(null, "Se a Modificado Correctamente");
@@ -189,13 +205,16 @@ public class ControladorProducto {
         }
 
     }
-public void LimpiarCamposProductos(JTextField id,
+
+    public void LimpiarCamposProductos(JTextField id,
             JTextField Producto,
             JTextField Neto,
             JTextField Iva,
             JTextField PrecioProducto,
             JTextField Stock,
-            JTextField UltimaModificacion
+            JTextField UltimaModificacion,
+            JTextField Clasificacion1,
+            JTextField Clasificacion2
     ) {
 
         id.setText("");
@@ -205,7 +224,8 @@ public void LimpiarCamposProductos(JTextField id,
         PrecioProducto.setText("");
         Stock.setText("");
         UltimaModificacion.setText("");
-        
+        Clasificacion1.setText("");
+        Clasificacion2.setText("");
 
     }
 

@@ -17,17 +17,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
-          // Crear un JScrollPane y agregar jDesktopPane1 dentro de él
+        // Crear un JScrollPane y agregar jDesktopPane1 dentro de él
         JScrollPane scrollPane = new JScrollPane(jDesktopPane1);
-        
+
         // Configurar el tamaño de jDesktopPane1 para que sea más grande que la ventana principal
-        jDesktopPane1.setPreferredSize(new java.awt.Dimension(1500, 1500));
-        
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(800, 800));
+
         // Reemplazar el layout original con el JScrollPane
         setContentPane(scrollPane);
-        
+
         // Volver a empacar para ajustar el JScrollPane
         pack();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -55,25 +57,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setMaximumSize(new java.awt.Dimension(966, 1260));
+        jPanel1.setNextFocusableComponent(jMenuBar1);
+        jPanel1.setOpaque(false);
+        jPanel1.setLayout(new javax.swing.OverlayLayout(jPanel1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        DpFormulario.setFont(new java.awt.Font("Segoe UI Emoji", 0, 48)); // NOI18N
+        DpFormulario.setFont(new java.awt.Font("Sitka Text", 3, 10)); // NOI18N
         DpFormulario.setForeground(new java.awt.Color(153, 153, 255));
         DpFormulario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        DpFormulario.setText("Rubefact");
+        DpFormulario.setText("Programa de Venta:   Ingenieros: Musicalizacion: Gabriel Ponce /Experto en algo: Jonathan Galarza/ El de la idea y nada mas:  Ruben Villegas"); // NOI18N
+        DpFormulario.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        DpFormulario.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("")));
+        DpFormulario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        DpFormulario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jDesktopPane1.setLayer(DpFormulario, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -81,12 +83,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DpFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(DpFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DpFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(DpFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        DpFormulario.getAccessibleContext().setAccessibleName("Programa de Venta\nIngenieros:\nMusicalizacion: Gabriel Ponce \nExperto en algo: Jonathan Galarza\nEl de la idea y nada mas:  Ruben Villegas");
+        DpFormulario.getAccessibleContext().setAccessibleDescription("");
 
         jMenuVender.setText("Vender");
         jMenuVender.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -184,6 +195,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem4);
 
+        jMenuItem2.setText("Buscar Proveedor");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem2);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Salir");
@@ -220,7 +239,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuVenderActionPerformed
 
     private void jMenuVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuVenderMouseClicked
-       
+
     }//GEN-LAST:event_jMenuVenderMouseClicked
 
     private void jMenuClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuClienteMouseClicked
@@ -308,6 +327,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         objetoFormularioPresupuesto.setVisible(true);
     }//GEN-LAST:event_jMenuItem1MouseClicked
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Formulario.ForBuscarProveedor objetoProveedor = new Formulario.ForBuscarProveedor();
+        DpFormulario.add(objetoProveedor);
+        objetoProveedor.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -352,6 +378,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuCliente;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

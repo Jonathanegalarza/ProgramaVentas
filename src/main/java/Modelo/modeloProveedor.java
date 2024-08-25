@@ -19,6 +19,7 @@ public class modeloProveedor {
     String localidad;
     String UfechaModificacion;
     String Observaciones;
+    
 
     public int getIdProveedor() {
         return IdProveedor;
