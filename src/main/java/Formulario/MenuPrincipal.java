@@ -4,7 +4,11 @@
  */
 package Formulario;
 
+import java.io.IOException;
+import javax.swing.JOptionPane;
+import respaldo.Respaldo;
 import javax.swing.JScrollPane;
+import restauracion.Restauracion;
 
 /**
  *
@@ -29,6 +33,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // Volver a empacar para ajustar el JScrollPane
         pack();
         setLocationRelativeTo(null);
+
+        Respaldo instanciaRespaldo = Respaldo.getInstance();
+        Restauracion instanciaRestauracion = Restauracion.getInstance();
 
     }
 
@@ -58,6 +65,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        Backup = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -205,6 +215,36 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu1.setText("Backup");
+
+        Backup.setText("Crear Backup");
+        Backup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackupMouseClicked(evt);
+            }
+        });
+        Backup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackupActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Backup);
+
+        jMenuItem7.setText("Recuperar Backup");
+        jMenuItem7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem7MouseClicked(evt);
+            }
+        });
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu1);
+
         jMenu4.setText("Salir");
         jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -334,6 +374,52 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void BackupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackupMouseClicked
+        Respaldo instanciaRespaldo = new respaldo.Respaldo();
+       
+        try {
+            instanciaRespaldo.crearBackup();
+            JOptionPane.showMessageDialog(null, "Respaldo creado con exito");
+        } catch (IOException error) {
+            System.out.println(error);
+        }
+
+    }//GEN-LAST:event_BackupMouseClicked
+
+    private void jMenuItem7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem7MouseClicked
+        Restauracion instanciaRestauracion = new restauracion.Restauracion();
+
+        try {
+            instanciaRestauracion.crearRestauracion();
+            JOptionPane.showMessageDialog(null, "Restauracion creada con exito . ");
+        } catch (IOException error) {
+            System.out.println(error);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem7MouseClicked
+
+    private void BackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackupActionPerformed
+Respaldo instanciaRespaldo = new respaldo.Respaldo();
+       
+        try {
+            instanciaRespaldo.crearBackup();
+            JOptionPane.showMessageDialog(null, "Respaldo creado con exito");
+        } catch (IOException error) {
+            System.out.println(error);
+        }        
+// TODO add your handling code here:
+    }//GEN-LAST:event_BackupActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+     Restauracion instanciaRestauracion = new restauracion.Restauracion();
+
+        try {
+            instanciaRestauracion.crearRestauracion();
+            JOptionPane.showMessageDialog(null, "Restauracion creada con exito . ");
+        } catch (IOException error) {
+            System.out.println(error);
+        }    // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -360,18 +446,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        Respaldo instanciaRespaldo = Respaldo.getInstance();
+        Restauracion instanciaRestauracion = Restauracion.getInstance();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MenuPrincipal().setVisible(true);
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Backup;
     private javax.swing.JLabel DpFormulario;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -382,6 +472,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuProducto;
     private javax.swing.JMenuItem jMenuProveedor;
     private javax.swing.JMenu jMenuVender;
