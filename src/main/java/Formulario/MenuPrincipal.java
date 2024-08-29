@@ -25,7 +25,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JScrollPane scrollPane = new JScrollPane(jDesktopPane1);
 
         // Configurar el tamaño de jDesktopPane1 para que sea más grande que la ventana principal
-        jDesktopPane1.setPreferredSize(new java.awt.Dimension(800, 800));
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(900, 900));
 
         // Reemplazar el layout original con el JScrollPane
         setContentPane(scrollPane);
