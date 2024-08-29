@@ -381,8 +381,6 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
         jScrollPane21 = new javax.swing.JScrollPane();
         tbresumenventa6 = new javax.swing.JTable();
         jLabel140 = new javax.swing.JLabel();
-        jLabel141 = new javax.swing.JLabel();
-        lbliva5 = new javax.swing.JLabel();
         jLabel142 = new javax.swing.JLabel();
         lbltotal5 = new javax.swing.JLabel();
 
@@ -3498,14 +3496,6 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
                 .addGap(22, 22, 22))
         );
 
-        jLabel141.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel141.setForeground(new java.awt.Color(102, 0, 153));
-        jLabel141.setText("Iva (21%)");
-
-        lbliva5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbliva5.setForeground(new java.awt.Color(102, 0, 153));
-        lbliva5.setText("----");
-
         jLabel142.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel142.setForeground(new java.awt.Color(102, 0, 153));
         jLabel142.setText("Total");
@@ -3530,13 +3520,9 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
                     .addComponent(jPanel39, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel142, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel141))
+                        .addComponent(jLabel142, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lbliva5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbltotal5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(lbltotal5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -3575,11 +3561,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
                 .addComponent(jPanel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel141)
-                    .addComponent(lbliva5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel142)
                     .addComponent(lbltotal5))
@@ -3737,7 +3719,6 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
 
     private void btnAgregarProductos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos2MouseClicked
         Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.PasarPruductosVentas(tbresumenventa, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock,txtSPrecioProducto, txtSPrecioFinal, txtCantidadVentas);
         objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
     }//GEN-LAST:event_btnAgregarProductos2MouseClicked
 
@@ -3796,7 +3777,6 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
 
     private void btnAgregarProductos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos3MouseClicked
         Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.PasarPruductosVentas(tbresumenventa, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock,txtSPrecioProducto, txtSPrecioFinal, txtCantidadVentas);
         objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
     }//GEN-LAST:event_btnAgregarProductos3MouseClicked
 
@@ -3855,7 +3835,6 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
 
     private void btnAgregarProductos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos4MouseClicked
         Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.PasarPruductosVentas(tbresumenventa, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock,txtSPrecioProducto, txtSPrecioFinal, txtCantidadVentas);
         objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
     }//GEN-LAST:event_btnAgregarProductos4MouseClicked
 
@@ -3914,7 +3893,6 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
 
     private void btnAgregarProductos5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos5MouseClicked
         Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.PasarPruductosVentas(tbresumenventa, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock,txtSPrecioProducto, txtSPrecioFinal, txtCantidadVentas);
         objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
     }//GEN-LAST:event_btnAgregarProductos5MouseClicked
 
@@ -4020,7 +3998,6 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel140;
-    private javax.swing.JLabel jLabel141;
     private javax.swing.JLabel jLabel142;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -4158,7 +4135,6 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lbliva2;
     private javax.swing.JLabel lbliva3;
     private javax.swing.JLabel lbliva4;
-    private javax.swing.JLabel lbliva5;
     private javax.swing.JLabel lbltotal;
     private javax.swing.JLabel lbltotal1;
     private javax.swing.JLabel lbltotal2;

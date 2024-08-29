@@ -203,8 +203,8 @@ public class ControladorVentas {
     public void PasarPruductosVentas(JTable tablaResumen,
             JTextField id,
             JTextField Producto,
-            JTextField Neto,
-            JTextField Iva,
+            //JTextField Neto,
+            //JTextField Iva,
             JTextField Stock,
             JTextField PrecioProducto,
             JTextField PrecioFinal,
@@ -225,15 +225,15 @@ public class ControladorVentas {
         }
 
         String nProducto = Producto.getText();
-        Double PrecioUnitario = Double.parseDouble(PrecioProducto.getText());
+        Double PrecioUnitario = Double.valueOf(PrecioProducto.getText());
         int cantidad = Integer.parseInt(CantidadVentas.getText());
         if (cantidad > stockDisponible) {
             JOptionPane.showMessageDialog(null, "A superado el Stock Disponible");
             return;
 
         }
-        Double subTotal = PrecioUnitario * cantidad;
-        modelo.addRow(new Object[]{idProducto, nProducto, PrecioUnitario, cantidad, subTotal});
+        double subTotal = PrecioUnitario * cantidad;
+        modelo.addRow(new Object[]{idProducto, nProducto, cantidad, subTotal});
 
     }
 
@@ -312,39 +312,96 @@ public class ControladorVentas {
             for (int i = 0; i < filas; i++) {
                 int idProducto = Integer.parseInt(TablaResumenVenta.getValueAt(i, 0).toString());
                 int cantidad = Integer.parseInt(TablaResumenVenta.getValueAt(i, 3).toString());
-                double PrecioVenta = Double.parseDouble(TablaResumenVenta.getValueAt(i,2).toString());
-                
-                psDetalle.setInt(1,idProducto);
-                psDetalle.setInt(2,cantidad);
-                psDetalle.setDouble(3,PrecioVenta);
+                double PrecioVenta = Double.parseDouble(TablaResumenVenta.getValueAt(i, 2).toString());
+
+                psDetalle.setInt(1, idProducto);
+                psDetalle.setInt(2, cantidad);
+                psDetalle.setDouble(3, PrecioVenta);
                 psDetalle.executeUpdate();
-                
-                psStock.setInt(1,cantidad);
-                psStock.setInt(2,idProducto);
+
+                psStock.setInt(1, cantidad);
+                psStock.setInt(2, idProducto);
                 psStock.executeUpdate();
-                
- 
+
             }
-            
+
             JOptionPane.showMessageDialog(null, "Venta Realizada");
 
         } catch (Exception e) {
-            
-            JOptionPane.showMessageDialog(null, "No Se Realizo la Venta "+e.toString());
+
+            JOptionPane.showMessageDialog(null, "No Se Realizo la Venta " + e.toString());
         } finally {
-        objetoConexion.cerrarConexion();
+            objetoConexion.cerrarConexion();
         }
 
     }
 
-    
-    
-     public  void limpiarCamposLuegoVenta(JTextField buscarCliente,JTable TablaCliente,
-             JTextField buscarPorducto, JTable tablaProducto,
-             JTextField selecIdCliente,
-             JTextField SELEC){
-         
-         
-         
-     }
+    public void limpiarCamposLuegoVenta(JTextField buscarCliente, JTable TablaCliente,
+            JTextField buscarProducto, JTable tablaProducto,
+            JTextField selectidCliente, JTextField selectNombre, JTextField selectDni,
+            JTextField selectDireccion, JTextField selectLocalidad, JTextField selectTelefono, JTextField selectEmail,
+            JTextField selectidProducto, JTextField selectProducto, JTextField selectNeto,
+            JTextField selectIva, JTextField selectStock, JTextField selectPrecioProducto, JTextField selectPrecioFinal,
+            JTextField CantidadVentas,
+            JTable tablaresumen, JLabel IVA, JLabel Total
+    ) {
+
+        buscarCliente.setText("");
+        buscarCliente.requestFocus();
+        DefaultTableModel modeloCliente = (DefaultTableModel) TablaCliente.getModel();
+        modeloCliente.setRowCount(0);
+
+        buscarProducto.setText("");
+        buscarProducto.requestFocus();
+        DefaultTableModel modeloProducto = (DefaultTableModel) tablaProducto.getModel();
+        modeloProducto.setRowCount(0);
+
+        selectidCliente.setText("");
+        selectNombre.setText("");
+        selectDni.setText("");
+        selectDireccion.setText("");
+        selectLocalidad.setText("");
+        selectTelefono.setText("");
+        selectEmail.setText("");
+        selectidProducto.setText("");
+        selectProducto.setText("");
+        selectNeto.setText("");
+        selectIva.setText("");
+        selectStock.setText("");
+        selectPrecioProducto.setText("");
+
+        selectPrecioFinal.setText("");
+        selectPrecioFinal.setEnabled(false);
+        CantidadVentas.setText("");
+        DefaultTableModel modeloResumenVenta = (DefaultTableModel) tablaresumen.getModel();
+        modeloResumenVenta.setRowCount(0);
+
+        IVA.setText("----");
+        Total.setText("----");
+
+    }
+
+    public void MostrarUltimaFactura(JLabel UltimaFactura) {
+
+        Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
+
+        try {
+
+            String consulta = "SELECT MAX(idFactura)as UltimaFactura from factura";
+            PreparedStatement ps = objetoConexion.estableceConexion().prepareStatement(consulta);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+
+                UltimaFactura.setText(String.valueOf(rs.getInt("UltimaFactura")));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al Mostra Factura" + e.toString());
+        } finally {
+
+            objetoConexion.cerrarConexion();
+
+        }
+
+    }
+
 }
