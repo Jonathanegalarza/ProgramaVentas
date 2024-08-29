@@ -256,24 +256,41 @@ public class ControladorVentas {
         }
 
     }
+public void calcularTotalPagar(JTable tablaResumen, JLabel IVA, JLabel TOTAL) {
+    DefaultTableModel modelo = (DefaultTableModel) tablaResumen.getModel();
+    double totalSubtotal = 0.0;
+    double Iva = 0.21;
+    double totaliva = 0.0;
 
-    public void calcularTotalPagar(JTable tablaResumen, JLabel IVA, JLabel TOTAL) {
-
-        DefaultTableModel modelo = (DefaultTableModel) tablaResumen.getModel();
-        double totalSubtotal = 0;
-        double Iva = 0.21;
-        double totaliva = 0;
-
-        DecimalFormat formato = new DecimalFormat("#.##");
-
+    try {
         for (int i = 0; i < modelo.getRowCount(); i++) {
-            totalSubtotal = Double.parseDouble(formato.format(totalSubtotal + (double) modelo.getValueAt(i, 4)));
-            totaliva = Double.parseDouble(formato.format(Iva * totalSubtotal));
+            Object value = modelo.getValueAt(i, 3); // Índice de la columna del subtotal
+            if (value != null && value instanceof Number) {
+                totalSubtotal += ((Number) value).doubleValue();
+            } else if (value != null) {
+                // Intentar convertir el valor a número si es una cadena
+                try {
+                    totalSubtotal += Double.parseDouble(value.toString());
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Error: valor no numérico en la tabla.");
+                    return;
+                }
+            }
         }
-        TOTAL.setText(String.valueOf(totalSubtotal));
-        IVA.setText(String.valueOf(totaliva));
 
+        // Calcular el IVA y el total
+        totaliva = totalSubtotal * Iva;
+        double totalFinal = totalSubtotal + totaliva;
+
+        // Formatear los valores para mostrarlos
+        DecimalFormat formato = new DecimalFormat("#.##");
+        TOTAL.setText(formato.format(totalFinal));
+        IVA.setText(formato.format(totaliva));
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Error al calcular el total a pagar: " + e.toString());
     }
+}
 
     public void crearFactura(JTextField idCliente) {
         Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
@@ -298,43 +315,43 @@ public class ControladorVentas {
 
     }
 
-    public void realizarVenta(JTable TablaResumenVenta) {
-        Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
+   public void realizarVenta(JTable TablaResumenVenta) {
+    Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
 
-        String consultaDetalle = "INSERT INTO detalle(Fkfactura,FkProducto,Cantidad,PrecioVenta)values ((SELECT MAX(idFactura)from factura),?,?,?); ";
-        String consultaStock = "UPDATE producto SET producto.Stock = Stock-? WHERE idProducto=?;";
-        try {
-            PreparedStatement psDetalle = objetoConexion.estableceConexion().prepareStatement(consultaDetalle);
-            PreparedStatement psStock = objetoConexion.estableceConexion().prepareStatement(consultaStock);
+    String consultaDetalle = "INSERT INTO detalle(Fkfactura,FkProducto,Cantidad,PrecioVenta)values ((SELECT MAX(idFactura)from factura),?,?,?);";
+    String consultaStock = "UPDATE producto SET producto.Stock = Stock-? WHERE idProducto=?;";
+    
+    try {
+        PreparedStatement psDetalle = objetoConexion.estableceConexion().prepareStatement(consultaDetalle);
+        PreparedStatement psStock = objetoConexion.estableceConexion().prepareStatement(consultaStock);
 
-            int filas = TablaResumenVenta.getRowCount();
+        int filas = TablaResumenVenta.getRowCount();
 
-            for (int i = 0; i < filas; i++) {
-                int idProducto = Integer.parseInt(TablaResumenVenta.getValueAt(i, 0).toString());
-                int cantidad = Integer.parseInt(TablaResumenVenta.getValueAt(i, 3).toString());
-                double PrecioVenta = Double.parseDouble(TablaResumenVenta.getValueAt(i, 2).toString());
+        for (int i = 0; i < filas; i++) {
+            int idProducto = Integer.parseInt(TablaResumenVenta.getValueAt(i, 0).toString());
+            int cantidad = Integer.parseInt(TablaResumenVenta.getValueAt(i, 2).toString());
+            double PrecioVenta = Double.parseDouble(TablaResumenVenta.getValueAt(i, 3).toString()); // Asegúrate de que la columna de precio es la correcta
 
-                psDetalle.setInt(1, idProducto);
-                psDetalle.setInt(2, cantidad);
-                psDetalle.setDouble(3, PrecioVenta);
-                psDetalle.executeUpdate();
+            psDetalle.setInt(1, idProducto);
+            psDetalle.setInt(2, cantidad);
+            psDetalle.setDouble(3, PrecioVenta); // Usar setDouble para manejar valores decimales
+            psDetalle.executeUpdate();
 
-                psStock.setInt(1, cantidad);
-                psStock.setInt(2, idProducto);
-                psStock.executeUpdate();
-
-            }
-
-            JOptionPane.showMessageDialog(null, "Venta Realizada");
-
-        } catch (Exception e) {
-
-            JOptionPane.showMessageDialog(null, "No Se Realizo la Venta " + e.toString());
-        } finally {
-            objetoConexion.cerrarConexion();
+            psStock.setInt(1, cantidad);
+            psStock.setInt(2, idProducto);
+            psStock.executeUpdate();
         }
 
+        JOptionPane.showMessageDialog(null, "Venta Realizada");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Error en la conversión de un número: " + e.getMessage());
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "No se realizó la Venta: " + e.toString());
+    } finally {
+        objetoConexion.cerrarConexion();
     }
+}
 
     public void limpiarCamposLuegoVenta(JTextField buscarCliente, JTable TablaCliente,
             JTextField buscarProducto, JTable tablaProducto,
