@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Formulario;
+
 public class ForPresupuesto extends javax.swing.JInternalFrame {
 
     /**
@@ -10,8 +11,8 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
      */
     public ForPresupuesto() {
         initComponents();
-        
-         txtSIdProducto.setEnabled(false);
+
+        txtSIdProducto.setEnabled(false);
         txtSProducto.setEnabled(false);
         txtSNeto.setEnabled(false);
         txtSIva.setEnabled(false);
@@ -25,7 +26,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
         txtSLocalidad.setEnabled(false);
         txtSTelefono.setEnabled(false);
         txtSEmail.setEnabled(false);
-        
+
     }
 
     /**
@@ -347,7 +348,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
         txtBusquedaCliente5 = new javax.swing.JTextField();
         jScrollPane19 = new javax.swing.JScrollPane();
         tbClientes5 = new javax.swing.JTable();
-        jButton14 = new javax.swing.JButton();
+        btnSeleccionar5 = new javax.swing.JButton();
         jPanel37 = new javax.swing.JPanel();
         jLabel123 = new javax.swing.JLabel();
         txtBusquedaProducto6 = new javax.swing.JTextField();
@@ -3094,7 +3095,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
         });
         jScrollPane19.setViewportView(tbClientes5);
 
-        jButton14.setText("Seleccionar");
+        btnSeleccionar5.setText("Seleccionar");
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
@@ -3108,7 +3109,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
                 .addGap(0, 80, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel36Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton14)
+                .addComponent(btnSeleccionar5)
                 .addContainerGap())
             .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
@@ -3119,7 +3120,7 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
                     .addComponent(jLabel122)
                     .addComponent(txtBusquedaCliente5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addComponent(jButton14)
+                .addComponent(btnSeleccionar5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
         );
@@ -3620,7 +3621,6 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtBusquedaProductoMouseClicked
 
     private void txtBusquedaProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaProductoKeyTyped
-       
 
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaProductoKeyTyped
@@ -3735,20 +3735,20 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
 
     private void btnAgregarProductos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos2MouseClicked
         Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
-        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa, lbliva, lbltotal);
     }//GEN-LAST:event_btnAgregarProductos2MouseClicked
 
     private void btnEliminar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminar2MouseClicked
-        Controlador.ControladorPresupuesto objetoPresupuesto =new Controlador.ControladorPresupuesto();
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
         objetoPresupuesto.EliminarProductosSelecionadosResumenPresupuesto(tbresumenventa);
-        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa, lbliva, lbltotal);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminar2MouseClicked
 
     private void btnCobrar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCobrar2MouseClicked
         Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
         objetoPresupuesto.realizarPresupuesto(tbClientes, txtSNeto, txtSIdCliente, txtSIva);
-        
+
 
     }//GEN-LAST:event_btnCobrar2MouseClicked
 
@@ -3793,20 +3793,20 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
 
     private void btnAgregarProductos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos3MouseClicked
         Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
-        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa, lbliva, lbltotal);
     }//GEN-LAST:event_btnAgregarProductos3MouseClicked
 
     private void btnEliminar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminar3MouseClicked
-        Controlador.ControladorPresupuesto objetoPresupuesto =new Controlador.ControladorPresupuesto();
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
         objetoPresupuesto.EliminarProductosSelecionadosResumenPresupuesto(tbresumenventa);
-        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa, lbliva, lbltotal);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminar3MouseClicked
 
     private void btnCobrar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCobrar3MouseClicked
         Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
         objetoPresupuesto.realizarPresupuesto(tbClientes, txtSNeto, txtSIdCliente, txtSIva);
-        
+
 
     }//GEN-LAST:event_btnCobrar3MouseClicked
 
@@ -3851,32 +3851,32 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
 
     private void btnAgregarProductos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos4MouseClicked
         Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
-        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa, lbliva, lbltotal);
     }//GEN-LAST:event_btnAgregarProductos4MouseClicked
 
     private void btnEliminar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminar4MouseClicked
-        Controlador.ControladorPresupuesto objetoPresupuesto =new Controlador.ControladorPresupuesto();
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
         objetoPresupuesto.EliminarProductosSelecionadosResumenPresupuesto(tbresumenventa);
-        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa, lbliva, lbltotal);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminar4MouseClicked
 
     private void btnCobrar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCobrar4MouseClicked
         Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
         objetoPresupuesto.realizarPresupuesto(tbClientes, txtSNeto, txtSIdCliente, txtSIva);
-      
+
 
     }//GEN-LAST:event_btnCobrar4MouseClicked
 
     private void txtBusquedaCliente5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaCliente5MouseClicked
         Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
-        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente5, tbClientes5);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente5MouseClicked
 
     private void txtBusquedaCliente5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaCliente5KeyReleased
         Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
-        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);   // TODO add your handling code here:
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente5, tbClientes);   // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente5KeyReleased
 
     private void tbClientes5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClientes5MouseClicked
@@ -3885,7 +3885,8 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tbClientes5MouseClicked
 
     private void txtBusquedaProducto6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaProducto6MouseClicked
-
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarProducto(txtBusquedaProducto6, tbProducto6);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaProducto6MouseClicked
 
@@ -3909,13 +3910,13 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
 
     private void btnAgregarProductos5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos5MouseClicked
         Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
-        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa, lbliva, lbltotal);
     }//GEN-LAST:event_btnAgregarProductos5MouseClicked
 
     private void btnEliminar5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminar5MouseClicked
-        Controlador.ControladorPresupuesto objetoPresupuesto =new Controlador.ControladorPresupuesto();
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
         objetoPresupuesto.EliminarProductosSelecionadosResumenPresupuesto(tbresumenventa);
-        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa, lbliva, lbltotal);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminar5MouseClicked
 
@@ -3950,12 +3951,12 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnHabilitar3;
     private javax.swing.JButton btnHabilitar4;
     private javax.swing.JButton btnHabilitar5;
+    private javax.swing.JButton btnSeleccionar5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
