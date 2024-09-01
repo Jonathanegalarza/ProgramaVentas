@@ -1,6 +1,5 @@
 package Controlador;
 
-import com.mysql.cj.jdbc.CallableStatement;
 import java.awt.HeadlessException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
