@@ -10,6 +10,22 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
      */
     public ForPresupuesto() {
         initComponents();
+        
+         txtSIdProducto.setEnabled(false);
+        txtSProducto.setEnabled(false);
+        txtSNeto.setEnabled(false);
+        txtSIva.setEnabled(false);
+        txtSPrecioProducto.setEnabled(false);
+        txtSStock.setEnabled(false);
+        txtSPrecioFinal.setEnabled(false);
+        txtSIdCliente.setEnabled(false);
+        txtSNombre.setEnabled(false);
+        txtSDni.setEnabled(false);
+        txtSDireccion.setEnabled(false);
+        txtSLocalidad.setEnabled(false);
+        txtSTelefono.setEnabled(false);
+        txtSEmail.setEnabled(false);
+        
     }
 
     /**
@@ -3684,33 +3700,33 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtBusquedaProducto3MouseClicked
 
     private void txtBusquedaProducto3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaProducto3KeyTyped
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarProducto(txtBusquedaProducto, tbProducto);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarProducto(txtBusquedaProducto, tbProducto);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaProducto3KeyTyped
 
     private void tbProducto3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbProducto3MouseClicked
 
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.SeleccionarProductoVenta(tbProducto, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock, txtSPrecioProducto, txtSPrecioFinal);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.SeleccionarProductoPresupuesto(tbProducto, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock, txtSPrecioProducto, txtSPrecioFinal);
         // TODO add your handling code here:
     }//GEN-LAST:event_tbProducto3MouseClicked
 
     private void txtBusquedaCliente2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaCliente2MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarCliente(txtBusquedaCliente, tbClientes);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente2MouseClicked
 
     private void txtBusquedaCliente2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaCliente2KeyReleased
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarCliente(txtBusquedaCliente, tbClientes);   // TODO add your handling code here:
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);   // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente2KeyReleased
 
     private void tbClientes2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClientes2MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.SeleccionarClienteVenta(tbClientes, txtSIdCliente, txtSNombre, txtSDni, txtSDireccion, txtSLocalidad, txtSTelefono, txtSEmail);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.SeleccionarClientePresupuesto(tbClientes, txtSIdCliente, txtSNombre, txtSDni, txtSDireccion, txtSLocalidad, txtSTelefono, txtSEmail);
     }//GEN-LAST:event_tbClientes2MouseClicked
 
     private void txtSIva2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSIva2ActionPerformed
@@ -3718,21 +3734,21 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSIva2ActionPerformed
 
     private void btnAgregarProductos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos2MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
     }//GEN-LAST:event_btnAgregarProductos2MouseClicked
 
     private void btnEliminar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminar2MouseClicked
-        Controlador.ControladorVentas objetoVenta =new Controlador.ControladorVentas();
-        objetoVenta.EliminarProductosSelecionadosResumenVentas(tbresumenventa);
-        objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
+        Controlador.ControladorPresupuesto objetoPresupuesto =new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.EliminarProductosSelecionadosResumenPresupuesto(tbresumenventa);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminar2MouseClicked
 
     private void btnCobrar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCobrar2MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.crearFactura(txtSIdCliente);
-        objetoVenta.realizarVenta(tbresumenventa);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.realizarPresupuesto(tbClientes, txtSNeto, txtSIdCliente, txtSIva);
+        
 
     }//GEN-LAST:event_btnCobrar2MouseClicked
 
@@ -3742,33 +3758,33 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtBusquedaProducto4MouseClicked
 
     private void txtBusquedaProducto4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaProducto4KeyTyped
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarProducto(txtBusquedaProducto, tbProducto);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarProducto(txtBusquedaProducto, tbProducto);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaProducto4KeyTyped
 
     private void tbProducto4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbProducto4MouseClicked
 
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.SeleccionarProductoVenta(tbProducto, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock, txtSPrecioProducto, txtSPrecioFinal);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.SeleccionarProductoPresupuesto(tbProducto, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock, txtSPrecioProducto, txtSPrecioFinal);
         // TODO add your handling code here:
     }//GEN-LAST:event_tbProducto4MouseClicked
 
     private void txtBusquedaCliente3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaCliente3MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarCliente(txtBusquedaCliente, tbClientes);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente3MouseClicked
 
     private void txtBusquedaCliente3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaCliente3KeyReleased
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarCliente(txtBusquedaCliente, tbClientes);   // TODO add your handling code here:
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);   // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente3KeyReleased
 
     private void tbClientes3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClientes3MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.SeleccionarClienteVenta(tbClientes, txtSIdCliente, txtSNombre, txtSDni, txtSDireccion, txtSLocalidad, txtSTelefono, txtSEmail);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.SeleccionarClientePresupuesto(tbClientes, txtSIdCliente, txtSNombre, txtSDni, txtSDireccion, txtSLocalidad, txtSTelefono, txtSEmail);
     }//GEN-LAST:event_tbClientes3MouseClicked
 
     private void txtSIva3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSIva3ActionPerformed
@@ -3776,21 +3792,21 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSIva3ActionPerformed
 
     private void btnAgregarProductos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos3MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
     }//GEN-LAST:event_btnAgregarProductos3MouseClicked
 
     private void btnEliminar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminar3MouseClicked
-        Controlador.ControladorVentas objetoVenta =new Controlador.ControladorVentas();
-        objetoVenta.EliminarProductosSelecionadosResumenVentas(tbresumenventa);
-        objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
+        Controlador.ControladorPresupuesto objetoPresupuesto =new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.EliminarProductosSelecionadosResumenPresupuesto(tbresumenventa);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminar3MouseClicked
 
     private void btnCobrar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCobrar3MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.crearFactura(txtSIdCliente);
-        objetoVenta.realizarVenta(tbresumenventa);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.realizarPresupuesto(tbClientes, txtSNeto, txtSIdCliente, txtSIva);
+        
 
     }//GEN-LAST:event_btnCobrar3MouseClicked
 
@@ -3800,33 +3816,33 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtBusquedaProducto5MouseClicked
 
     private void txtBusquedaProducto5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaProducto5KeyTyped
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarProducto(txtBusquedaProducto, tbProducto);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarProducto(txtBusquedaProducto, tbProducto);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaProducto5KeyTyped
 
     private void tbProducto5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbProducto5MouseClicked
 
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.SeleccionarProductoVenta(tbProducto, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock, txtSPrecioProducto, txtSPrecioFinal);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.SeleccionarClientePresupuesto(tbProducto, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock, txtSPrecioProducto, txtSPrecioFinal);
         // TODO add your handling code here:
     }//GEN-LAST:event_tbProducto5MouseClicked
 
     private void txtBusquedaCliente4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaCliente4MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarCliente(txtBusquedaCliente, tbClientes);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente4MouseClicked
 
     private void txtBusquedaCliente4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaCliente4KeyReleased
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarCliente(txtBusquedaCliente, tbClientes);   // TODO add your handling code here:
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);   // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente4KeyReleased
 
     private void tbClientes4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClientes4MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.SeleccionarClienteVenta(tbClientes, txtSIdCliente, txtSNombre, txtSDni, txtSDireccion, txtSLocalidad, txtSTelefono, txtSEmail);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.SeleccionarClientePresupuesto(tbClientes, txtSIdCliente, txtSNombre, txtSDni, txtSDireccion, txtSLocalidad, txtSTelefono, txtSEmail);
     }//GEN-LAST:event_tbClientes4MouseClicked
 
     private void txtSIva4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSIva4ActionPerformed
@@ -3834,38 +3850,38 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSIva4ActionPerformed
 
     private void btnAgregarProductos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos4MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
     }//GEN-LAST:event_btnAgregarProductos4MouseClicked
 
     private void btnEliminar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminar4MouseClicked
-        Controlador.ControladorVentas objetoVenta =new Controlador.ControladorVentas();
-        objetoVenta.EliminarProductosSelecionadosResumenVentas(tbresumenventa);
-        objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
+        Controlador.ControladorPresupuesto objetoPresupuesto =new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.EliminarProductosSelecionadosResumenPresupuesto(tbresumenventa);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminar4MouseClicked
 
     private void btnCobrar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCobrar4MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.crearFactura(txtSIdCliente);
-        objetoVenta.realizarVenta(tbresumenventa);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.realizarPresupuesto(tbClientes, txtSNeto, txtSIdCliente, txtSIva);
+      
 
     }//GEN-LAST:event_btnCobrar4MouseClicked
 
     private void txtBusquedaCliente5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaCliente5MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarCliente(txtBusquedaCliente, tbClientes);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente5MouseClicked
 
     private void txtBusquedaCliente5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaCliente5KeyReleased
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarCliente(txtBusquedaCliente, tbClientes);   // TODO add your handling code here:
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarCliente(txtBusquedaCliente, tbClientes);   // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaCliente5KeyReleased
 
     private void tbClientes5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClientes5MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.SeleccionarClienteVenta(tbClientes, txtSIdCliente, txtSNombre, txtSDni, txtSDireccion, txtSLocalidad, txtSTelefono, txtSEmail);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.SeleccionarClientePresupuesto(tbClientes, txtSIdCliente, txtSNombre, txtSDni, txtSDireccion, txtSLocalidad, txtSTelefono, txtSEmail);
     }//GEN-LAST:event_tbClientes5MouseClicked
 
     private void txtBusquedaProducto6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaProducto6MouseClicked
@@ -3874,16 +3890,16 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtBusquedaProducto6MouseClicked
 
     private void txtBusquedaProducto6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaProducto6KeyTyped
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.BuscarProducto(txtBusquedaProducto, tbProducto);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.BuscarProducto(txtBusquedaProducto, tbProducto);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaProducto6KeyTyped
 
     private void tbProducto6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbProducto6MouseClicked
 
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.SeleccionarProductoVenta(tbProducto, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock, txtSPrecioProducto, txtSPrecioFinal);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.SeleccionarProductoPresupuesto(tbProducto, txtSIdProducto, txtSProducto, txtSNeto, txtSIva, txtSStock, txtSPrecioProducto, txtSPrecioFinal);
         // TODO add your handling code here:
     }//GEN-LAST:event_tbProducto6MouseClicked
 
@@ -3892,14 +3908,14 @@ public class ForPresupuesto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSIva5ActionPerformed
 
     private void btnAgregarProductos5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProductos5MouseClicked
-        Controlador.ControladorVentas objetoVenta = new Controlador.ControladorVentas();
-        objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
+        Controlador.ControladorPresupuesto objetoPresupuesto = new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
     }//GEN-LAST:event_btnAgregarProductos5MouseClicked
 
     private void btnEliminar5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminar5MouseClicked
-        Controlador.ControladorVentas objetoVenta =new Controlador.ControladorVentas();
-        objetoVenta.EliminarProductosSelecionadosResumenVentas(tbresumenventa);
-        objetoVenta.calcularTotalPagar(tbresumenventa,lbliva,lbltotal);
+        Controlador.ControladorPresupuesto objetoPresupuesto =new Controlador.ControladorPresupuesto();
+        objetoPresupuesto.EliminarProductosSelecionadosResumenPresupuesto(tbresumenventa);
+        objetoPresupuesto.calcularTotalPresupuesto(tbresumenventa,lbliva,lbltotal);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminar5MouseClicked
 
