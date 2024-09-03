@@ -4,17 +4,22 @@
 
 package com.mycompany.rubefact;
 
+import Formulario.FormLogin;
+
 /**
  *
  * @author Ruben
  */
-public class RubeFact {
+public  class RubeFact {
 
     public static void main(String[] args) {
        
-        Configuracion.CConexion objetoConexion = new Configuracion.CConexion();
-        objetoConexion.estableceConexion();
-        Formulario.MenuPrincipal objetoMenuPrincipal = new Formulario.MenuPrincipal();
-        objetoMenuPrincipal.setVisible(true);   
+          Formulario.FormLogin objetoLogin = new FormLogin();
+       objetoLogin.setVisible(true);
     }
-}
+        //Formulario.MenuPrincipal Menu= new Formulario.MenuPrincipal();
+        //Menu.setVisible(true);
+        
+        
+    }
+
