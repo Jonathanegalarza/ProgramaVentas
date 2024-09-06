@@ -50,6 +50,7 @@ Modelo\modeloCliente.class
 Formulario\MenuPrincipal$10.class
 Formulario\ForClientes$9.class
 Formulario\ForPresupuesto$10.class
+Configuracion\CLogin.class
 Formulario\ForPresupuesto$20.class
 Formulario\ForPresupuesto$3.class
 Formulario\ForBuscarProveedor$3.class
@@ -58,6 +59,7 @@ Formulario\ForProducto$5.class
 Formulario\ForPresupuesto$9.class
 respaldo\Respaldo.class
 com\mycompany\rubefact\RubeFact.class
+Formulario\FormLogin$2.class
 Formulario\ForPresupuesto$2.class
 Formulario\ForPresupuesto$21.class
 Formulario\ForVentas$4.class
@@ -96,11 +98,13 @@ Formulario\MenuPrincipal$12.class
 Formulario\ForPresupuesto$35.class
 Formulario\MenuPrincipal$8.class
 Formulario\ForProducto$7.class
+Formulario\FormLogin$1.class
 Formulario\ForPresupuesto$15.class
 Formulario\ForPresupuesto$55.class
 Formulario\MenuPrincipal$15.class
 Formulario\ForPresupuesto$25.class
 Formulario\ForPresupuesto$45.class
+Formulario\FormLogin.class
 Formulario\MenuPrincipal$3.class
 Formulario\ForPresupuesto$58.class
 Formulario\ForClientes$5.class

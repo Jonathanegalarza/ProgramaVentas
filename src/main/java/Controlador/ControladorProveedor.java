@@ -35,8 +35,8 @@ public class ControladorProveedor {
         modelo.addColumn("Cuit");
         modelo.addColumn("Direccion");
         modelo.addColumn("Localidad");
-        modelo.addColumn("Telefono");
         modelo.addColumn("Email");
+        modelo.addColumn("Telefono");
         modelo.addColumn("UfechaModificacion");
 
         tablaTotalProveedores.setModel(modelo);
@@ -61,8 +61,8 @@ public class ControladorProveedor {
                     objetoProveedor.getCuit(),
                     objetoProveedor.getDireccion(),
                     objetoProveedor.getLocalidad(),
-                    objetoProveedor.getEmail(),
                     objetoProveedor.getTelefono(),
+                    objetoProveedor.getEmail(),
                     objetoProveedor.getUfechaModificacion(),});
             }
             tablaTotalProveedores.setModel(modelo);

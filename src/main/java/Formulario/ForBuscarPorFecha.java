@@ -4,6 +4,8 @@
  */
 package Formulario;
 
+import Controlador.ControladorReportes;
+
 /**
  *
  * @author Ruben
@@ -32,10 +34,10 @@ public class ForBuscarPorFecha extends javax.swing.JInternalFrame {
         bntBuscarfecha = new javax.swing.JButton();
         txtdesde = new com.toedter.calendar.JDateChooser();
         txthasta = new com.toedter.calendar.JDateChooser();
-        jLabel3 = new javax.swing.JLabel();
-        txtTotalIngresos = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblTotal = new javax.swing.JTable();
+        tblventas = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        lbltotalGeneral = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -49,6 +51,11 @@ public class ForBuscarPorFecha extends javax.swing.JInternalFrame {
         jLabel2.setText("Hasta");
 
         bntBuscarfecha.setText("Buscar");
+        bntBuscarfecha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntBuscarfechaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,25 +86,22 @@ public class ForBuscarPorFecha extends javax.swing.JInternalFrame {
                     .addComponent(txtdesde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jLabel3.setText("Total de Ingresos");
-
-        txtTotalIngresos.setText("----");
-
-        tblTotal.setModel(new javax.swing.table.DefaultTableModel(
+        tblventas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+
             },
             new String [] {
 
             }
         ));
-        jScrollPane2.setViewportView(tblTotal);
+        jScrollPane2.setViewportView(tblventas);
+
+        jLabel3.setText("Total de Ingresos");
+
+        lbltotalGeneral.setText("----");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,12 +110,12 @@ public class ForBuscarPorFecha extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(560, 560, 560)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTotalIngresos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lbltotalGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -122,15 +126,21 @@ public class ForBuscarPorFecha extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(txtTotalIngresos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
+                    .addComponent(lbltotalGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bntBuscarfechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntBuscarfechaMouseClicked
+Controlador.ControladorReportes objetoReporte = new ControladorReportes();
+objetoReporte.mostrarTotalPorFecha(txtdesde, txthasta, tblventas, lbltotalGeneral);
+// TODO add your handling code here:
+    }//GEN-LAST:event_bntBuscarfechaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -140,8 +150,8 @@ public class ForBuscarPorFecha extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tblTotal;
-    private javax.swing.JTextField txtTotalIngresos;
+    private javax.swing.JLabel lbltotalGeneral;
+    private javax.swing.JTable tblventas;
     private com.toedter.calendar.JDateChooser txtdesde;
     private com.toedter.calendar.JDateChooser txthasta;
     // End of variables declaration//GEN-END:variables
